@@ -1,0 +1,26 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{hero.superhero}} </mat-card-title>
+        <mat-card-subtitle>{{hero.alter_ego}} </mat-card-subtitle>
+    </mat-card-header>
+
+    <img matCardImage src="Card wide image source">
+    <mat-card-content>
+        <strong>Actores:</strong> {{hero.characters}}
+        <mat-chip-listbox>
+            <mat-chip *ngFor="let name of hero.characters.split(',') | slice:0:2"
+              >{{name | titlecase}}
+            </mat-chip>
+
+        </mat-chip-listbox>
+    </mat-card-content>
+
+
+    <mat-card-actions align="start">
+        <button mat-button mat-flat-button (click)="''" color="primary">Ver mas</button>
+
+    </mat-card-actions>
+    <mat-card-footer>
+        Footer
+    </mat-card-footer>
+</mat-card>

@@ -8,6 +8,16 @@
         <mat-icon>menu</mat-icon>
       </button>
     </mat-toolbar>
+
+    <mat-nav-list>
+      <mat-list-item *ngFor="let item of sidebarItems"
+          [routerLink]="item.url"
+          (click)="menuLateral.toggle()"
+          >
+        <mat-icon matListItemIcon >{{item.icon}}</mat-icon>
+        {{item.label}}
+      </mat-list-item>
+    </mat-nav-list>
   </mat-sidenav>
 
   <mat-toolbar color="primary">
@@ -21,8 +31,7 @@
     </button>
   </mat-toolbar>
 
-  <div class="container">
-    <h3>Heroes</h3>
+  <div class="container p-2">
     <router-outlet></router-outlet>
   </div>
 
